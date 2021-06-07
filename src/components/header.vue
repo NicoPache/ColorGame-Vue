@@ -1,14 +1,14 @@
 <template>
-
   <section class="src-components-header">
-  <div id="header" :style="{ 'background': this.getColorHeader }">
-		<h1>The Great <br>
-			<span id="colorDisplay" >{{this.$store.state.colorGanador}}</span>
-			<br>
-			Guessing Game</h1>
-	</div>
+    <div id="header" :style="{ background: this.getColorHeader }">
+      <h1>
+        The Great <br />
+        <span id="colorDisplay">{{ this.$store.state.colorGanador }}</span>
+        <br />
+        Guessing Game
+      </h1>
+    </div>
   </section>
-
 </template>
 
 <script lang="js">
@@ -33,24 +33,18 @@
       }
     }
 }
-
-
 </script>
 
 <style scoped lang="css">
-  .src-components-header {
-  
-
-  }
-  #colorDisplay {
-	font-size: 200%;
+#colorDisplay {
+  font-size: 200%;
 }
 #header {
-	transition: all 0.3s;
-	background: steelblue;
-	text-transform: uppercase;
-	text-align: center;
-	margin: 0;
-	color: white;
+  transition: all 0.3s;
+  background: steelblue;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  color: white;
 }
 </style>

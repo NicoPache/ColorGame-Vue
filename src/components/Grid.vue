@@ -1,15 +1,13 @@
 <template>
-
-
-   <div id="container">
-   <div v-for="(color,index) in this.addColors"
-   :key="index"
-   class="square"
-   @click="clickColor(color,index)"
-  :style="{ 'background-color': color }">
+  <div id="container">
+    <div
+      v-for="(color, index) in this.addColors"
+      :key="index"
+      class="square"
+      @click="clickColor(color, index)"
+      :style="{ 'background-color': color }"
+    ></div>
   </div>
-  </div>
-
 </template>
 
 <script lang="js">
@@ -22,23 +20,21 @@
     },
     data () {
       return {
-      messageDisplay:"",
-      restartButton:"",
-      headerColor:"",
+
       }
     },
     methods: {
       clickColor(color,index) {
-       
+
       if(color === this.$store.state.colorGanador){
-      this.$store.dispatch('getMessageDisplay',"You Picked Right!") 
+      this.$store.dispatch('getMessageDisplay',"You Picked Right!")
       this.setAllColorsTo(this.$store.state.colorGanador)
       this.$store.dispatch('getColorHeader', this.$store.state.colorGanador)
       this.$store.dispatch('getButtonTitle',"Play Again!")
-			}	else{		  
+			}	else{
       this.cambiarColor(index)
 			this.$store.dispatch('getMessageDisplay',"Try Again!")
-      
+
       }},
       cambiarColor(index){
         const array=[]
@@ -68,12 +64,10 @@
       }
     }
 }
-
-
 </script>
 
 <style scoped>
-  #container {
+#container {
   margin: 20px auto;
   max-width: 600px;
 }
@@ -88,5 +82,4 @@
   -webkit-transition: background 0.8s;
   -moz-transition: background 0.8s;
 }
-
 </style>

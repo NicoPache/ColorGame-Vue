@@ -31,7 +31,7 @@ this.restart()
   restart() {
       this.colors = this.createNewColors();
       this.pickedColor = this.colors[this.pickColor()];
-    
+
       this.$store.dispatch('getColors', this.colors)
       this.$store.dispatch('getColorGanador', this.pickedColor)
       this.$store.dispatch('getColorHeader', 'steelblue')
@@ -52,8 +52,8 @@ createRandomStringColor(){
 	const newColor = "rgb(" + this.randomInt() + ", " + this.randomInt() + ", " + this.randomInt() + ")" ;
 
 	return newColor;
-}, 
- 
+},
+
  createNewColors(){
 	const arr = [];
 	for (var i = 0; i < this.$store.state.colorCount; i++) {
@@ -71,7 +71,4 @@ createRandomStringColor(){
 }
 </script>
 
-<style scoped lang="css">
-.src-components-juego {
-}
-</style>
+<style scoped lang="css"></style>
